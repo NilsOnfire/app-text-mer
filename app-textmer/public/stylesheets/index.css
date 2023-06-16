@@ -1,0 +1,205 @@
+.container {
+    background: #031c2d;
+    width: 90%;
+    
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 5fr 5fr;
+    border-radius: 4px;
+    padding: 10px;
+
+    grid-template-areas: "header header"
+        "text-mer diagram"
+        "mermaid-code diagram";
+}
+
+.container .header {
+    background: #031c2d;
+    grid-area: header;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.7rem;
+    border: 1px solid yellowgreen;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+
+
+
+.container .text-mer {
+    background: #031c2d;
+    grid-area: text-mer;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+
+
+.container .text-mer .form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+}
+.container .text-mer .form .text-area {
+    height: 210px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    background:#031c2d;
+    border-color: yellowgreen;
+     font-size: 1rem;
+}
+.container .mermaid-code .mermaid-div{
+    height:100%;
+    width: 100%;
+
+}
+.container .mermaid-code .mermaid-div .mercode{
+    height:100%;
+    width: 100%;
+    box-sizing: border-box;
+    color:white;
+    padding-left: 5px;
+    padding-right: 5px;
+    background:#031c2d;
+    border-color: yellowgreen;
+    font-size: 1rem;
+}
+::placeholder {
+    color:rgb(117, 161, 28);
+    opacity: 0.7;
+    font-size: 1rem;
+    font-family: Courier;
+    font-weight: bold;
+}
+
+/* 
+.container .sidebar {
+    background: #031c2d;
+    grid-area: sidebar;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+} */
+
+.container .text-mer .form .btn-generate {
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background: #031c2d;
+    color: #FBFCFC;
+    border: 1px solid yellowgreen;
+    border-radius: 5px;
+    transition-duration: 1s;
+    margin-top: 10px;
+}
+
+.container .text-mer .form .btn-generate:hover {
+    background: #FBFCFC;
+    color: green;
+}
+
+.container .mermaid-code {
+    grid-area: mermaid-code;
+    background: #031c2d;
+
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.container .mermaid-code .mercode {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.container .diagram {
+    background: #031c2d;
+    grid-area: diagram;
+    border: #fff solid 2px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid yellowgreen;
+    border-radius: 5px;
+
+}
+
+.container .diagram .mermaid {
+    width: 100%;
+    height: 500px;
+
+}
+
+.container .diagram .diagram-btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 25px;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+
+.container .diagram .diagram-btns .btn-download {
+    font-family: monospace;
+    margin: 0px 10px 2px 5px;
+    height: 100%;
+    padding: 2px 10px 2px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    transition-duration: 1s;
+    background: #031c2d;
+    color: #fbfcfc;
+    border: 1px solid yellowgreen;
+}
+
+
+.container .diagram .diagram-btns .btn-download:hover {
+    background: #FBFCFC;
+    color: green;
+
+
+}
+
+.er.entityLabel {
+
+    fill: black;
+}
+
+.er.entityBox {
+    fill: yellow;
+}
+
+.er.relationshipLine {
+    stroke: white;
+}
+
+.er.relationshipLabel {
+    fill: red;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header         header"
+            "text-mer       text-mer"
+
+            "mermaid-code   mermaid-code"
+            "diagram        diagram";
+    }
+}

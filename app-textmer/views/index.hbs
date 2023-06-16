@@ -1,0 +1,39 @@
+<div class="container">
+  <header class="header">
+    <h4>text-to-mer</h4>
+  </header>
+
+  <main class="text-mer">
+    <form class="form" action="/" method="post"> <textarea class="text-area" placeholder="Your text here:" name="text"
+        id="text-area" cols="30" rows="10">{{texts.stm}}</textarea>
+      <button class="btn-generate" type="submit">Generate</button>
+    </form>
+
+  </main>
+
+
+
+  <aside class="mermaid-code">
+<div class="mermaid-div" > <textarea class="mercode" name="mercode-text" id="mercode" cols="30" rows="10"
+      placeholder=" Mermaid code">{{texts.resp}}</textarea></div>
+   
+
+  </aside>
+
+  <section class="diagram">
+    <div class="mermaid">
+      {{texts.resp}}
+
+
+    </div>
+
+    <div class="diagram-btns">
+
+      <button class="btn-download" onclick="convertirASVG()">Download</button>
+    </div>
+  </section>
+</div>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+</script>
+<script src="/javascripts/download.js"></script>
