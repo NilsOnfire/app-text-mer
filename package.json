@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node --trace-warnings src/index.js",
+    "dev": "nodemon --trace-warnings src/index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
