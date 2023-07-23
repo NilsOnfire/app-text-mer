@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const { normalizePort } = require("./utils/www");
 const { notFoundMiddleWare } = require("./middlewares/errors");
+const digramRouter = require("./routes/diagram.routes");
 dotenv.config()
 
 const app = express();
@@ -21,6 +22,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Application routing
+app.use('/api/diagrams', digramRouter);
+
 // catch 404 and forward to error handler
 app.use(notFoundMiddleWare);
 app.set('port', port);
