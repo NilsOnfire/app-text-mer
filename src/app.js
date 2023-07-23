@@ -1,10 +1,9 @@
-var createError = require("http-errors");
-var express = require("express");
+
+let express = require("express");
 const http = require('http');
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-const bodyParser = require("body-parser");
+let path = require("path");
+let cookieParser = require("cookie-parser");
+let logger = require("morgan");
 const dotenv = require("dotenv");
 const { normalizePort } = require("./utils/www");
 const { notFoundMiddleWare } = require("./middlewares/errors");
@@ -18,10 +17,11 @@ const hostName = process.env["HOST_NAME"] || "127.0.0.1";
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.text());
+app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(express.static(path.join(__dirname, "public")));
+
 
 // Application routing
 app.use('/api/diagrams', digramRouter);
